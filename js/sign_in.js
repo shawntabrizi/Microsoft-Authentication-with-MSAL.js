@@ -60,6 +60,7 @@ function sign_in() {
                         updatePage();
                     }, function (error) {
                         console.log("Failure acquiring token: " + error);
+                        document.getElementById("sign_in_text").innerText = error;
                     });
                 }
             });
@@ -69,6 +70,7 @@ function sign_in() {
         }
     }, function (error) {
         console.log("error: " + error);
+        document.getElementById("sign_in_text").innerText = error;
         });
 
 }
