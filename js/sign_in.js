@@ -18,7 +18,8 @@ var userAgentApplication = new Msal.UserAgentApplication(applicationConfig.clien
 })
 
 function update_app() {
-    applicationConfig.clientID = document.getElementById("appid_input").value
+    var clientid_string = document.getElementById("clientid_input").value
+    applicationConfig.clientID = clientid_string.split(' ').join('')
     var scopes_string = document.getElementById("scopes_input").value
     applicationConfig.scopes = scopes_string.split(' ').join('').split(',')
     userAgentApplication = new Msal.UserAgentApplication(applicationConfig.clientID, null, function (errorDes, token, error, tokenType, instance) {
@@ -34,7 +35,7 @@ function update_app() {
 }
 
 function sign_in() {
-
+    update_app();
     
     userAgentApplication.loginPopup(applicationConfig.scopes).then(function (id_token) {
         var user = userAgentApplication.getUser();
