@@ -63,8 +63,7 @@ function updatePage() {
         var id_token_jwt = JSON.parse(jwtdecode(id_token_global, div_header, div_payload, div_signature, p_message, div_raw));
         if (id_token_jwt['name']) {
             document.getElementById('name').innerText = id_token_jwt['name']
-            document.getElementById('sign_in_text').hidden = true
-            document.getElementById('sign_in_button').hidden = true
+            document.getElementById('sign_in_button').innerText = "Sign in again!"
         }
         document.getElementById('id_token_container').hidden = false
     }

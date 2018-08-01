@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="">
 
-    <title>MSAL.JS Test</title>
+    <title>Microsoft Authentication with MSAL.js</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
@@ -19,24 +19,33 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">MSAL.JS Test
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
     <main role="main">
         <!-- Main jumbotron for a primary marketing message or call to action -->
         <div class="jumbotron">
             <div class="container">
                 <h1 class="display-3">Hello,
-                    <span id="name">there</span>.</h1>
-                <p id="sign_in_text">Sign into your Microsoft Account.</p>
+                    <span id="name">there</span>.
+                </h1>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="appid_label">Client ID</span>
+                    </div>
+                    <input type="text" class="form-control col-4" aria-label="Default" aria-describedby="appid_label" value="947846e9-bea5-403d-a8f4-aa30f54ee587"
+                        id="appid_input">
+                    <div class="input-group-append">
+                        <span class="input-group-text" data-toggle="tooltip" data-placement="top" title="If you use a custom Client ID, you will need to add this website's url to the list of reply urls.">&#128712;</span>
+                    </div>
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="scopes_label">Scopes</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Default" aria-describedby="scopes_label" value="https://graph.microsoft.com/user.read,https://graph.microsoft.com/user.readbasic.all"
+                        id="scopes_input">
+                    <div class="input-group-append">
+                        <button class="btn btn-success" type="button" id="update_app_button">Update</button>
+                    </div>
+                </div>
+
+                <p id="sign_in_text" class="token">Sign in with your Microsoft Account.</p>
                 <p>
                     <a class="btn btn-primary btn-lg" role="button" id="sign_in_button">Sign In &raquo;</a>
                 </p>
@@ -94,12 +103,17 @@
                     </div>
                 </div>
             </div>
-            <hr>
         </div>
         <!-- /container -->
     </main>
-    <footer class="container">
-        <p>&copy; Microsoft Hackathon 2018</p>
+    <footer class="footer">
+        <div class="container text-center">
+            <span class="text-muted">Created by
+                <a href="https://shawntabrizi.com/">Shawn Tabrizi</a> - Source on
+                <a href="https://github.com/shawntabrizi/Microsoft-Authentication-with-MSAL.js">GitHub</a> - Blog Post - Using
+                <a href="https://github.com/AzureAD/microsoft-authentication-library-for-js">MSAL.js</a>
+            </span>
+        </div>
     </footer>
     <!-- Bootstrap core JavaScript
     ================================================== -->
