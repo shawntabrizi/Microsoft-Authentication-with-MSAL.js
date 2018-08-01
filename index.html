@@ -1,0 +1,120 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="">
+
+    <title>MSAL.JS Test</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="msidoneth.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">MSAL.JS Test
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main role="main">
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            <div class="container">
+                <h1 class="display-3">Hello,
+                    <span id="name">there</span>.</h1>
+                <p id="sign_in_text">Sign into your Microsoft Account.</p>
+                <p>
+                    <a class="btn btn-primary btn-lg" role="button" id="sign_in_button">Sign In &raquo;</a>
+                </p>
+            </div>
+        </div>
+        <div class="container">
+            <!-- Example row of columns -->
+            <div id="id_token_container" hidden>
+                <h2>ID Token</h2>
+                <hr>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h3>Raw JWT</h3>
+                        <p id="jwt_raw_id" class="token"></p>
+                    </div>
+                    <div class="col-md-8">
+                        <h3>JWT Decoded Output</h3>
+                        <div id="jwt_decoded_output_id">
+                            <div id="message_id"></div>
+                            <h4>Header</h4>
+                            <div id="header_id" class="jwt token"></div>
+                            <br />
+                            <h4>Payload</h4>
+                            <div id="payload_id" class="jwt token"></div>
+                            <br />
+                            <h4>Signature</h4>
+                            <div id="signature_id" class="token"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div id="access_token_container" hidden>
+                <h2>Access Token</h2>
+                <hr>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h3>Raw JWT</h3>
+                        <p id="jwt_raw_access" class="token"></p>
+                    </div>
+                    <div class="col-md-8">
+                        <h3>JWT Decoded Output</h3>
+                        <div id="jwt_decoded_output_access">
+                            <div id="message_access"></div>
+                            <h4>Header</h4>
+                            <div id="header_access" class="jwt token"></div>
+                            <br />
+                            <h4>Payload</h4>
+                            <div id="payload_access" class="jwt token"></div>
+                            <br />
+                            <h4>Signature</h4>
+                            <div id="signature_access" class="token"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <!-- /container -->
+    </main>
+    <footer class="container">
+        <p>&copy; Microsoft Hackathon 2018</p>
+    </footer>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+        crossorigin="anonymous"></script>
+
+    <!-- Custom JS-->
+    <script src="js/msal.min.js"></script>
+    <script src="js/sign_in.js"></script>
+    <script src="js/jwt_decoder.js"></script>
+</body>
+
+</html>
