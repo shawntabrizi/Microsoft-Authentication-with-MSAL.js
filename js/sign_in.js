@@ -1,13 +1,14 @@
 var applicationConfig = {
     // These default values get updated by the HTML inputs
     clientID: '947846e9-bea5-403d-a8f4-aa30f54ee587',
-    scopes: ['https://graph.microsoft.com/user.read','https://graph.microsoft.com/user.readbasic.all']
+    scopes: ['https://graph.microsoft.com/user.read','https://graph.microsoft.com/user.readbasic.all'],
+    authority: "https://login.microsoftonline.com/common"
 };
 
 var id_token_global = null
 var access_token_global = null
 
-var userAgentApplication = new Msal.UserAgentApplication(applicationConfig.clientID, null, function (errorDes, token, error, tokenType, instance) {
+var userAgentApplication = new Msal.UserAgentApplication(applicationConfig.clientID, applicationConfig.authority, function (errorDes, token, error, tokenType, instance) {
     // this callback is called after loginRedirect OR acquireTokenRedirect. It's not used with loginPopup,  acquireTokenPopup.
     if (error) {
         console.log(error + ": " + errorDes);
@@ -22,7 +23,10 @@ function update_app() {
     applicationConfig.clientID = clientid_string.split(' ').join('')
     var scopes_string = document.getElementById("scopes_input").value
     applicationConfig.scopes = scopes_string.split(' ').join('').split(',')
-    userAgentApplication = new Msal.UserAgentApplication(applicationConfig.clientID, null, function (errorDes, token, error, tokenType, instance) {
+    var authority_selected = document.getElementById("authority_select").value
+    applicationConfig.authority = "https://login.microsoftonline.com/" + authority_selected
+    
+    userAgentApplication = new Msal.UserAgentApplication(applicationConfig.clientID, applicationConfig.authority, function (errorDes, token, error, tokenType, instance) {
         // this callback is called after loginRedirect OR acquireTokenRedirect. It's not used with loginPopup,  acquireTokenPopup.
         if (error) {
             console.log(error + ": " + errorDes);

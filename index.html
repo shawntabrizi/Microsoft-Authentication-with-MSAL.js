@@ -29,12 +29,20 @@
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="clientid_label">Client ID</span>
-                    </div>
-                    <input type="text" class="form-control col-4" aria-label="Default" aria-describedby="clientid_label" value="947846e9-bea5-403d-a8f4-aa30f54ee587"
-                        id="clientid_input">
-                    <div class="input-group-append">
                         <span class="input-group-text" data-toggle="tooltip" data-placement="top" title="If you use a custom Client ID, you will need to add this website's url to the list of reply urls.">&#128712;</span>
                     </div>
+                    <input type="text" class="form-control" aria-label="Default" aria-describedby="clientid_label" value="947846e9-bea5-403d-a8f4-aa30f54ee587"
+                        id="clientid_input">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="authority_select">Authority</label>
+                    </div>
+                    <select class="custom-select" id="authority_select">
+                        <option value="common" selected>/common</option>
+                        <option value="organizations">/organizations</option>
+                    </select>
+
+                </div>
+                <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="scopes_label">Scopes</span>
                     </div>
@@ -107,7 +115,8 @@
         <div class="container text-center">
             <span class="text-muted">Created by
                 <a href="https://shawntabrizi.com/">Shawn Tabrizi</a> - Source on
-                <a href="https://github.com/shawntabrizi/Microsoft-Authentication-with-MSAL.js">GitHub</a> - Blog Post - Using
+                <a href="https://github.com/shawntabrizi/Microsoft-Authentication-with-MSAL.js">GitHub</a> -
+                <a href="https://shawntabrizi.com/uncategorized/building-a-simple-sign-in-page-with-msal-js-for-microsoft-identities/">Blog Post</a> - Using
                 <a href="https://github.com/AzureAD/microsoft-authentication-library-for-js">MSAL.js</a>
             </span>
         </div>
