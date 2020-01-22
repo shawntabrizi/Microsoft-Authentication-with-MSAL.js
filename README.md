@@ -2,7 +2,7 @@
 
 ## Get custom access tokens using a single page application built with MSAL.js
 
-https://shawntabrizi.com/msal/
+https://www.shawntabrizi.com/Microsoft-Authentication-with-MSAL.js/
 
 ![Screenshot](https://i.imgur.com/boVySXi.png)
 
